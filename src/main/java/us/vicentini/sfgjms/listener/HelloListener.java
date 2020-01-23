@@ -25,7 +25,9 @@ public class HelloListener {
 
     @JmsListener(destination = JmsConfig.MY_HELLO_WORLD)
     public void listen(@Payload HelloWorldMessage helloWorldMessage,
-                       @Headers MessageHeaders headers, Message message) {
+                       @Headers MessageHeaders headers,
+                       javax.jms.Message jmsMessage,
+                       org.springframework.messaging.Message springMessage) {
         log.info("Listener Message received: " + helloWorldMessage.getMessage());
     }
 
