@@ -26,7 +26,7 @@ public class ActiveMQEmbeddedServer {
                 .setPersistenceEnabled(false)
                 .setJournalDirectory("target/data/journal")
                 .setSecurityEnabled(false)
-                .addAcceptorConfiguration("invm", "vm://1");
+                .addAcceptorConfiguration("invm", "vm://0");
         server = ActiveMQServers.newActiveMQServer(configuration);
     }
 
